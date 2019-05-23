@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtAgregar, txtUpdate;
     private ArrayList<String> countries;
     private ArrayAdapter<String> arrayAdapter;
-    private String countryList[] = { "Mexico", "USA", "Brazil"};
+    private String countryList[] = { "Canada", "Mexico"};
     private Dialog dialog;
     private AlertDialog.Builder dialog1;
     private TextView txtMessage;
@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         txtUpdate = (EditText) dialog.findViewById(R.id.txtUpdate);
         txtUpdate.setText(s);
+
+        txtAgregar.setText(countries.set(position, txtUpdate.getText().toString()));
 
         btnActualizar = (Button) dialog.findViewById(R.id.btnDone);
         btnActualizar.setOnClickListener(new View.OnClickListener() {
